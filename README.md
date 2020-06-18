@@ -12,7 +12,9 @@
 ## 👉 About The Project
 
 This project was completely built with [Create React App](https://github.com/facebook/create-react-app) for Math-magicians Inc, 
-and it's a simple but beautiful calculator app that allows you to do the basic mathematical operations.  
+and it's a simple but beautiful calculator app that allows you to do the basic mathematical operations.
+
+[<p align="center">Live Version</p>](https://smarteecalc.herokuapp.com/)
 
 ## Available Scripts
 
