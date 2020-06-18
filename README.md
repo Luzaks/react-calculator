@@ -20,9 +20,11 @@ and it's a simple but beautiful calculator app that allows you to do the basic m
 
 In the project directory, you can run, in :
 
-1.- For activate the web-server watcher ### `./bin/webpack-dev-server`
-2.- For starting the web-server ### `npm start`
-3.- Outside the web-server, for running tests ### `npm test`
+1.- For activate the web-server watcher `./bin/webpack-dev-server`
+
+2.- For starting the web-server `npm start`
+
+3.- Outside the web-server, for running tests `npm test`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
