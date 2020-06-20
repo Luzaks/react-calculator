@@ -1,0 +1,9 @@
+.button-panel-container {
+    width: 60%;
+    height: 500px;
+    border: 1px solid black;
+}
+
+.header {
+    margin: 0;
+}

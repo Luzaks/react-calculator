@@ -1,0 +1,8 @@
+.display-container {
+    width: 60%;
+    height: 50px;
+    border: 1px solid black;
+}
+.header {
+    margin: 0;
+}
