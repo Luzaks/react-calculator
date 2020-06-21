@@ -1,8 +1,14 @@
 .display-container {
-    width: 60%;
-    height: 50px;
-    border: 1px solid black;
+  box-sizing: border-box;
+  width: 40%;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px;
 }
+
 .result-display {
-    margin: 0;
+  margin: 0;
 }
