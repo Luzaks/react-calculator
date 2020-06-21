@@ -4,9 +4,20 @@
   border: 1px solid black;
   box-sizing: border-box;
   display: flex;
-  padding: 15px;
 }
 
 .header {
   margin: 0;
+}
+
+.number-panel {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.number-row {
+  width: 100%;
+  height: 25%;
+  display: flex;
 }

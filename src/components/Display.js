@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../styles/Display.css';
 
 class Display extends React.Component {
@@ -18,5 +19,13 @@ class Display extends React.Component {
     );
   }
 }
+
+Display.propTypes = {
+  result: PropTypes.string,
+};
+
+Display.defaultProps = {
+  result: '0',
+};
 
 export default Display;
