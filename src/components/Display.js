@@ -10,9 +10,10 @@ class Display extends React.Component {
   }
 
   render() {
+    const {result} = this.props;
     return (
       <div className="display-container">
-        <h1 className="header">Display</h1>
+        <p className="result-display">{result}</p>
       </div>
     );
   }
