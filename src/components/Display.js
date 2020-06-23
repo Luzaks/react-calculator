@@ -13,7 +13,7 @@ class Display extends React.Component {
   render() {
     const { result } = this.props;
     return (
-      <div className="display-container">
+      <div className="display-container" data-testid="display-container">
         <p className="result-display">{result}</p>
       </div>
     );

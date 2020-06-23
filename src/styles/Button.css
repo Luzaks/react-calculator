@@ -1,5 +1,4 @@
 .button-item {
-  width: 25%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -12,12 +11,4 @@
 
 .button-item:hover {
   cursor: pointer;
-}
-
-.reSize-button {
-  width: 50%;
-}
-
-.reColored-button {
-  background-color: #f5913e;
 }
