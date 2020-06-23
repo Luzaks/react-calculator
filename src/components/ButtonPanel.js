@@ -21,38 +21,37 @@ class ButtonPanel extends React.Component {
   }
 
   render() {
-    const defStyle = 'button-item';
-    const transparent = 'reColored-button';
+    const reColor = 'transparent';
     return (
       <div className="button-panel-container">
         <div className="number-panel">
           <div className="number-row">
-            {this.renderButtons('AC', `${defStyle} ${transparent}`)}
-            {this.renderButtons('+/-', `${defStyle} ${transparent}`)}
-            {this.renderButtons('%', `${defStyle} ${transparent}`)}
+            {this.renderButtons('AC', `${reColor}`)}
+            {this.renderButtons('+/-', `${reColor}`)}
+            {this.renderButtons('%', `${reColor}`)}
             {this.renderButtons('÷')}
           </div>
           <div className="number-row">
-            {this.renderButtons('7', `${defStyle} ${transparent}`)}
-            {this.renderButtons('8', `${defStyle} ${transparent}`)}
-            {this.renderButtons('9', `${defStyle} ${transparent}`)}
+            {this.renderButtons('7', `${reColor}`)}
+            {this.renderButtons('8', `${reColor}`)}
+            {this.renderButtons('9', `${reColor}`)}
             {this.renderButtons('x')}
           </div>
           <div className="number-row">
-            {this.renderButtons('4', `${defStyle} ${transparent}`)}
-            {this.renderButtons('5', `${defStyle} ${transparent}`)}
-            {this.renderButtons('6', `${defStyle} ${transparent}`)}
+            {this.renderButtons('4', `${reColor}`)}
+            {this.renderButtons('5', `${reColor}`)}
+            {this.renderButtons('6', `${reColor}`)}
             {this.renderButtons('-')}
           </div>
           <div className="number-row">
-            {this.renderButtons('1', `${defStyle} ${transparent}`)}
-            {this.renderButtons('2', `${defStyle} ${transparent}`)}
-            {this.renderButtons('3', `${defStyle} ${transparent}`)}
+            {this.renderButtons('1', `${reColor}`)}
+            {this.renderButtons('2', `${reColor}`)}
+            {this.renderButtons('3', `${reColor}`)}
             {this.renderButtons('+')}
           </div>
           <div className="number-row">
-            {this.renderButtons('0', `${defStyle} ${transparent}`, '50%')}
-            {this.renderButtons('.', `${defStyle} ${transparent}`)}
+            {this.renderButtons('0', `${reColor}`, true)}
+            {this.renderButtons('.', `${reColor}`)}
             {this.renderButtons('=')}
           </div>
         </div>

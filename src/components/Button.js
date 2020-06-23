@@ -12,8 +12,14 @@ class Button extends React.Component {
 
   render() {
     const { value, color, wide } = this.props;
+    let width = '';
+    if (wide) {
+      width = '50%';
+    } else {
+      width = '25%';
+    }
     return (
-      <button className={color} style={`width: ${wide};`} type="submit">
+      <button className="button-item" style={{ backgroundColor: `${color}`, width: `${width}` }} type="submit">
         {value}
       </button>
     );
@@ -23,13 +29,13 @@ class Button extends React.Component {
 Button.propTypes = {
   value: PropTypes.string,
   color: PropTypes.string,
-  wide: PropTypes.string,
+  wide: PropTypes.bool,
 };
 
 Button.defaultProps = {
   value: '0',
-  color: 'button-item',
-  wide: '25%',
+  color: '#f5913e',
+  wide: false,
 };
 
 export default Button;
