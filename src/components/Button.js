@@ -12,14 +12,12 @@ class Button extends React.Component {
 
   render() {
     const { value, color, wide } = this.props;
-    let width = '';
+    let width = '25';
     if (wide) {
-      width = '50%';
-    } else {
-      width = '25%';
+      width = parseInt(width, 10) * 2;
     }
     return (
-      <button className="button-item" style={{ backgroundColor: `${color}`, width: `${width}` }} type="submit">
+      <button className="button-item" style={{ backgroundColor: `${color}`, width: `${width}%` }} type="submit">
         {value}
       </button>
     );
