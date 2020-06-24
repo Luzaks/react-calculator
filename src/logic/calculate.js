@@ -1,9 +1,9 @@
 import operate from './operate';
 
-const parsingInt = string => parseInt(string, 10);
-
 const calculate = (object, buttonName) => {
   let { total, next, operation } = object;
+
+  const parsingInt = string => parseInt(string, 10);
 
   switch (buttonName) {
     case '+/-':
