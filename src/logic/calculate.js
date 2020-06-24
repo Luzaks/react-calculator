@@ -1,3 +1,5 @@
+import operate from './operate';
+
 const parsingInt = string => parseInt(string, 10);
 
 const calculate = (object, buttonName) => {
@@ -15,7 +17,8 @@ const calculate = (object, buttonName) => {
       operation = null;
       break;
     case '=':
-      total = 'igual';
+      operation = buttonName;
+      operate(total, next, operation);
       break;
     default:
       if (parsingInt(buttonName) && total) {
