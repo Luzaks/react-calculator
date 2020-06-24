@@ -4,12 +4,11 @@ const parsingInt = string => parseInt(string, 10);
 
 const calculate = (object, buttonName) => {
   let { total, next, operation } = object;
+
   switch (buttonName) {
     case '+/-':
       total = parsingInt(total) * (-1);
-      break;
-    case '.':
-      total = '.';
+      next = parsingInt(next) * (-1);
       break;
     case 'AC':
       total = null;
