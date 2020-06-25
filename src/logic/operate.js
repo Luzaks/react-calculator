@@ -2,25 +2,25 @@ import Big from 'big-js';
 
 const operate = (numberOne, numberTwo, operation) => {
   let result = '';
+  const a = new Big(numberOne);
+  const b = new Big(numberTwo);
+
   switch (operation) {
     case '+':
-      result += (Big(numberOne) + Big(numberTwo)).toString();
+      result += (a.plus(b)).toString();
       break;
     case '-':
-      result += (Big(numberOne) - Big(numberTwo)).toString();
+      result += (a.minus(b)).toString();
       break;
     case 'x':
-      result += (Big(numberOne) * Big(numberTwo)).toString();
+      result += (a.times(b)).toString();
       break;
     case '÷':
       if (numberTwo === '0') {
         result += 'It\'s not possible to divide by zero.';
       } else {
-        result += (Big(numberOne) / Big(numberTwo)).toString();
+        result += (a.div(b)).toString();
       }
-      break;
-    case '%':
-      result += (Big(numberOne) % Big(numberTwo)).toString();
       break;
     default:
       result = 'Error';

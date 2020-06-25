@@ -7,8 +7,9 @@ const calculate = (object, buttonName) => {
 
   switch (buttonName) {
     case '+/-':
-      total = parsingInt(total) * (-1);
-      next = parsingInt(next) * (-1);
+      operation = '÷';
+      total = operate(parsingInt(total), -1, operation);
+      next = operate(parsingInt(next), -1, operation);
       break;
     case 'AC':
       total = null;
@@ -16,14 +17,22 @@ const calculate = (object, buttonName) => {
       operation = null;
       break;
     case '=':
+    case 'x':
+    case '÷':
+    case '+':
+    case '-':
       operation = buttonName;
-      operate(total, next, operation);
+      total = operate(parsingInt(total), parsingInt(next), operation);
+      break;
+    case '%':
+      operation = buttonName;
+      total = operate(parsingInt(total), 100, operation);
       break;
     default:
-      if (parsingInt(buttonName) && total) {
-        total += buttonName;
-      } else {
+      if (parsingInt(buttonName)) {
         total = buttonName;
+      } else {
+        total = 'Not a number';
       }
       break;
   }
