@@ -1,7 +1,6 @@
 import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-// eslint-disable-next-line no-unused-vars
 import calculate from '../logic/calculate';
 import '../styles/App.css';
 
@@ -9,16 +8,23 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      result: '0',
+      total: '',
+      next: '',
+      operation: '',
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(buttonName) {
+    this.setState(prevState => calculate(prevState, buttonName));
   }
 
   render() {
-    const { result } = this.state;
+    const { total, next } = this.state;
     return (
       <div className="App">
-        <Display result={result} />
-        <ButtonPanel />
+        <Display result={total} nextValue={next} />
+        <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
   }
