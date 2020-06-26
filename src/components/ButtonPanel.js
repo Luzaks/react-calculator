@@ -43,11 +43,7 @@ const ButtonPanel = ({ clickHandler }) => {
 };
 
 ButtonPanel.propTypes = {
-  clickHandler: PropTypes.func,
-};
-
-ButtonPanel.defaultProps = {
-  clickHandler: PropTypes,
+  clickHandler: PropTypes.func.isRequired,
 };
 
 export default ButtonPanel;
