@@ -25,7 +25,7 @@ const calculate = (object, buttonName) => {
       total = operate(parsingInt(total), parsingInt(next), operation);
       break;
     case '%':
-      operation = buttonName;
+      operation = '÷';
       total = operate(parsingInt(total), 100, operation);
       break;
     default:
