@@ -28,12 +28,21 @@ const calculate = (object, buttonName) => {
       operation = '÷';
       total = operate(parsingInt(total), 100, operation);
       break;
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
+      if (total && total !== '0') total += buttonName;
+      else total = buttonName;
+      break;
     default:
-      if (parsingInt(buttonName)) {
-        total = buttonName;
-      } else {
-        total = 'Not a number';
-      }
+      total = 'Not a number';
       break;
   }
   return { total, next, operation };
