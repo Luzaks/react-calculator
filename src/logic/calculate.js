@@ -7,27 +7,40 @@ const calculate = (object, buttonName) => {
 
   switch (buttonName) {
     case '+/-':
-      operation = '÷';
+      operation = 'x';
       total = operate(parsingInt(total), -1, operation);
-      next = operate(parsingInt(next), -1, operation);
       break;
     case 'AC':
       total = null;
       next = null;
       operation = null;
       break;
-    case '=':
     case 'x':
     case '÷':
     case '+':
     case '-':
+      if (total) {
+        if (next && operation) {
+          total = operate(parsingInt(next), parsingInt(total), operation);
+          next = null;
+        }
+        next = total;
+        total = null;
+        operation = buttonName;
+      }
+      total = '0';
       operation = buttonName;
-      total = operate(parsingInt(total), parsingInt(next), operation);
       break;
     case '%':
       operation = '÷';
       total = operate(parsingInt(total), 100, operation);
       break;
+    case '=':
+      if (operation) {
+        next = operate(parsingInt(next), parsingInt(total), operation);
+        total = null;
+      }
+      return { total, next, operation };
     case '0':
     case '1':
     case '2':
@@ -42,7 +55,7 @@ const calculate = (object, buttonName) => {
       else total = buttonName;
       break;
     default:
-      total = 'Not a number';
+      total = 'Error.';
       break;
   }
   return { total, next, operation };
