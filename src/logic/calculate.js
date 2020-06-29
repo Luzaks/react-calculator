@@ -27,20 +27,17 @@ const calculate = (object, buttonName) => {
         next = total;
         total = null;
         operation = buttonName;
+      } else {
+        total = '0';
+        operation = buttonName;
       }
-      total = '0';
-      operation = buttonName;
       break;
     case '%':
       operation = '÷';
       total = operate(parsingInt(total), 100, operation);
       break;
     case '=':
-      if (operation) {
-        next = operate(parsingInt(next), parsingInt(total), operation);
-        total = null;
-      }
-      return { total, next, operation };
+      return total;
     case '0':
     case '1':
     case '2':
@@ -55,7 +52,7 @@ const calculate = (object, buttonName) => {
       else total = buttonName;
       break;
     default:
-      total = 'Error.';
+      total = 'Error';
       break;
   }
   return { total, next, operation };
