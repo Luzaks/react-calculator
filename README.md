@@ -1,5 +1,7 @@
 # ✨ React Calculator
 
+<div align="center"><img src="./src/styles/assets/React%20App.png" alt="react-calculator-sample"></div>
+
 ## 📝 Table of Contents
 
 * [About the Project](#about-the-project)

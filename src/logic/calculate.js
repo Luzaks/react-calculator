@@ -61,7 +61,7 @@ const calculate = (object, buttonName) => {
     case '8':
     case '9':
     case '.':
-      if (total) total += buttonName;
+      if (total && total !== '0' && total !== 'Error') total += buttonName;
       else total = buttonName;
       break;
     default:
