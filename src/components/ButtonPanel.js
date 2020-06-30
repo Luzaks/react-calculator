@@ -1,63 +1,50 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
 import '../styles/ButtonPanel.css';
 
-class ButtonPanel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
-
-  renderButtons(name, style, width) {
-    return (
-      <Button
-        value={name}
-        color={style}
-        wide={width}
-        event={this.state}
-      />
-    );
-  }
-
-  render() {
-    const reColor = 'transparent';
-    return (
-      <div className="button-panel-container">
-        <div className="number-panel">
-          <div className="number-row">
-            {this.renderButtons('AC', `${reColor}`)}
-            {this.renderButtons('+/-', `${reColor}`)}
-            {this.renderButtons('%', `${reColor}`)}
-            {this.renderButtons('÷')}
-          </div>
-          <div className="number-row">
-            {this.renderButtons('7', `${reColor}`)}
-            {this.renderButtons('8', `${reColor}`)}
-            {this.renderButtons('9', `${reColor}`)}
-            {this.renderButtons('x')}
-          </div>
-          <div className="number-row">
-            {this.renderButtons('4', `${reColor}`)}
-            {this.renderButtons('5', `${reColor}`)}
-            {this.renderButtons('6', `${reColor}`)}
-            {this.renderButtons('-')}
-          </div>
-          <div className="number-row">
-            {this.renderButtons('1', `${reColor}`)}
-            {this.renderButtons('2', `${reColor}`)}
-            {this.renderButtons('3', `${reColor}`)}
-            {this.renderButtons('+')}
-          </div>
-          <div className="number-row">
-            {this.renderButtons('0', `${reColor}`, true)}
-            {this.renderButtons('.', `${reColor}`)}
-            {this.renderButtons('=')}
-          </div>
+const ButtonPanel = ({ clickHandler }) => {
+  const reColor = 'transparent';
+  const handleClick = clickedBtn => clickHandler(clickedBtn);
+  return (
+    <div className="button-panel-container">
+      <div className="number-panel">
+        <div className="number-row">
+          <Button clickHandler={handleClick} value="AC" color={reColor} />
+          <Button clickHandler={handleClick} value="+/-" color={reColor} />
+          <Button clickHandler={handleClick} value="%" color={reColor} />
+          <Button clickHandler={handleClick} value="÷" />
+        </div>
+        <div className="number-row">
+          <Button clickHandler={handleClick} value="7" color={reColor} />
+          <Button clickHandler={handleClick} value="8" color={reColor} />
+          <Button clickHandler={handleClick} value="9" color={reColor} />
+          <Button clickHandler={handleClick} value="x" />
+        </div>
+        <div className="number-row">
+          <Button clickHandler={handleClick} value="4" color={reColor} />
+          <Button clickHandler={handleClick} value="5" color={reColor} />
+          <Button clickHandler={handleClick} value="6" color={reColor} />
+          <Button clickHandler={handleClick} value="-" />
+        </div>
+        <div className="number-row">
+          <Button clickHandler={handleClick} value="1" color={reColor} />
+          <Button clickHandler={handleClick} value="2" color={reColor} />
+          <Button clickHandler={handleClick} value="3" color={reColor} />
+          <Button clickHandler={handleClick} value="+" />
+        </div>
+        <div className="number-row">
+          <Button clickHandler={handleClick} value="0" color={reColor} wide />
+          <Button clickHandler={handleClick} value="." color={reColor} />
+          <Button clickHandler={handleClick} value="=" />
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+ButtonPanel.propTypes = {
+  clickHandler: PropTypes.func.isRequired,
+};
 
 export default ButtonPanel;
