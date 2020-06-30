@@ -3,12 +3,12 @@ import operate from './operate';
 const calculate = (object, buttonName) => {
   let { total, next, operation } = object;
 
-  const parsingInt = string => parseInt(string, 10);
+  const parsingF = string => parseFloat(string);
 
   switch (buttonName) {
     case '+/-':
       operation = 'x';
-      total = operate(parsingInt(total), -1, operation);
+      total = operate(parsingF(total), -1, operation);
       break;
     case 'AC':
       total = null;
@@ -21,8 +21,8 @@ const calculate = (object, buttonName) => {
     case '-':
       if (total) {
         if (next && operation) {
-          total = operate(parsingInt(next), parsingInt(total), operation);
-          next = null;
+          next = operate(parsingF(next), parsingF(total), operation);
+          total = null;
         }
         next = total;
         total = null;
@@ -34,7 +34,7 @@ const calculate = (object, buttonName) => {
       break;
     case '%':
       operation = '÷';
-      total = operate(parsingInt(total), 100, operation);
+      total = operate(parsingF(total), 100, operation);
       break;
     case '=':
       if (!total) {
@@ -45,7 +45,7 @@ const calculate = (object, buttonName) => {
         next = null;
         operation = buttonName;
       } else {
-        total = operate(parsingInt(next), total, operation);
+        total = operate(parsingF(next), total, operation);
         next = null;
         operation = null;
       }
@@ -60,7 +60,8 @@ const calculate = (object, buttonName) => {
     case '7':
     case '8':
     case '9':
-      if (total && total !== '0') total += buttonName;
+    case '.':
+      if (total) total += buttonName;
       else total = buttonName;
       break;
     default:
