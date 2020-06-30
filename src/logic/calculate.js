@@ -28,7 +28,7 @@ const calculate = (object, buttonName) => {
         total = null;
         operation = buttonName;
       } else {
-        total = '0';
+        total = null;
         operation = buttonName;
       }
       break;
@@ -37,7 +37,19 @@ const calculate = (object, buttonName) => {
       total = operate(parsingInt(total), 100, operation);
       break;
     case '=':
-      return total;
+      if (!total) {
+        total = next;
+        next = null;
+        operation = buttonName;
+      } else if (!next) {
+        next = null;
+        operation = buttonName;
+      } else {
+        total = operate(parsingInt(next), total, operation);
+        next = null;
+        operation = null;
+      }
+      break;
     case '0':
     case '1':
     case '2':
